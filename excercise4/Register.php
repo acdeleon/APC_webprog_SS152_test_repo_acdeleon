@@ -49,7 +49,7 @@ p{
 <ul>
 <li><a href="mypage.html">Home</a></li>
 <li><a href="more.html">More about me</a></li>
-<li><a href="Register.php">Register Here</a></li>
+<li><a href="Register.php">Contact me</a></li>
 </ul>
 
 
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $name = test_input($_POST["name"]);
     if (!preg_match("/^[a-zA-Z-0-9]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed"; 
+      $nameErr = "Only letters,numbers and white space allowed"; 
     }
   }
     if (empty($_POST["nickname"])) {
@@ -121,7 +121,7 @@ function test_input($data) {
 }
 ?>
 <br><br>
-<center><h2>PHP Form Validation Example</h2>
+<center><h2>CONTACT ME AT deleonaleoralphcastro@gmail.com OR SEND ME A NOTE</h2>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name:<input type="text" name="name" value="<?php echo $name;?>">

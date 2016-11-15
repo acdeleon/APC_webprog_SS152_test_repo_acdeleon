@@ -12,7 +12,11 @@ if(isset($_POST['btn-save']))
  // sql query for inserting data into database
  
         $sql_query = "INSERT INTO users(first_name,last_name,user_city) VALUES('$first_name','$last_name','$city_name')";
+<<<<<<< HEAD
+ mysqli_query($con,$sql_query);
+=======
  $con=mysqli_query($con,$sql_query);
+>>>>>>> 61ce4b9c26af398d557b22f1fc1c5c75435ec6c9
         
         // sql query for inserting data into database
  

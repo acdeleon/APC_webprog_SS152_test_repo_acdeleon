@@ -54,6 +54,10 @@ p{
 
 
 <?php
+<<<<<<< HEAD
+
+=======
+>>>>>>> 61ce4b9c26af398d557b22f1fc1c5c75435ec6c9
 // define variables and set to empty values
 $nameErr = $nicknameErr = $emailErr = $genderErr = $phoneErr = $homeadErr = "";
 $name =$nickname= $email = $gender = $comment = $phone = $homead = "";
@@ -120,7 +124,13 @@ function test_input($data) {
   return $data;
 }
 ?>
+<<<<<<< HEAD
+
 <br><br>
+
+=======
+<br><br>
+>>>>>>> 61ce4b9c26af398d557b22f1fc1c5c75435ec6c9
 <center><h2>CONTACT ME AT deleonaleoralphcastro@gmail.com OR SEND ME A NOTE</h2>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  

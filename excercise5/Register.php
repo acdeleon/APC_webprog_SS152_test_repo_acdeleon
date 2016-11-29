@@ -5,7 +5,10 @@ include_once 'dbconfig.php';
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CRUD Operations With PHP and MySql - By Cleartuts</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style2.css" type="text/css" />
+<style>
+<?php include 'style.css'; ?>
+</style>
 </head>
 <body>
 <center>

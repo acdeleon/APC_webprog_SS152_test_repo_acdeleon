@@ -1,52 +1,52 @@
 <!DOCTYPE HTML>  
+<?php
+include_once 'dbconfig.php';
+if(isset($_POST['btn-save']))
+{
+ // variables for input data
+ $Name = $_POST['Name'];
+ $Nickname = $_POST['Nickname'];
+ $Email = $_POST['Email'];
+ $Phone_number = $_POST['Phone_number'];
+ $Home_address = $_POST['Home_address'];
+ // variables for input data
+ 
+ // sql query for inserting data into database
+ 
+        $sql_query = "INSERT INTO users(Name,Nickname,Email,Phone_number,Home_address) VALUES('$Name,$Nickname,$Email,$Phone_number,$Home_address')";
+ mysqli_query($sql_query);
+        
+        // sql query for inserting data into database
+ 
+}
+?>
 <html>
+
 <head>
 <style>
-.error {color: #FF0000;}
+<?php include 'style.css'; ?>
 
-h1{color:yellow;}
-body{outline-style: dotted;outline-color: yellow;}
-body {background-image: url("c.jpg");}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(255,255,255,0.5);
-	position: fixed;
-    top: 0;
-    width: 100%;
-	
-}
-
-li  {
-    float: left;
-	
-}
-
-li a  {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-	border-right: 1px solid #111;
-}
-
-li:hover{
- background-color: yellow;}
- 
-
- 
-p{
-
-    margin-bottom: 20px;
-}
 </style>
 </head>
 <body>  
 <?php include 'links.php';?>
+ <?php
+ $sql_query="SELECT * FROM users";
+ $result_set=mysql_query($sql_query);
+ while($row=mysql_fetch_row($result_set))
+ {
+  ?>
+        <tr>
+        <td><?php echo $row[1]; ?></td>
+        <td><?php echo $row[2]; ?></td>
+        <td><?php echo $row[3]; ?></td>
+  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
+        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
+        </tr>
+        <?php
+ }
+ ?>
+
 
 <?php
 // define variables and set to empty values
@@ -118,7 +118,7 @@ function test_input($data) {
 
 <br><br>
 
-=======
+
 <br><br>
 <center><h2>CONTACT ME AT deleonaleoralphcastro@gmail.com OR SEND ME A NOTE</h2>
 <p><span class="error">* required field.</span></p>

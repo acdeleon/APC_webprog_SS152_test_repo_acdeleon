@@ -3,48 +3,7 @@
 <head>
 <title>Webprog</title>
 <style>
-h1{color:yellow;}
-body{outline-style: dotted;outline-color: yellow;}
-body {background-image: url("c.jpg");}
-
-
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(255,255,255,0.5);
-	position: fixed;
-    top: 0;
-    width: 100%;
-	
-}
-
-li  {
-    float: left;
-	
-}
-
-li a  {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-	border-right: 1px solid #111;
-}
-
-li:hover{
- background-color: yellow;}
- 
-
- 
-p{
-
-    margin-bottom: 20px;
-}
-
+<?php include 'style.css'; ?>
 </style>
 
 </head>

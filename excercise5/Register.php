@@ -1,39 +1,30 @@
-<!DOCTYPE HTML>  
 <?php
 include_once 'dbconfig.php';
-if(isset($_POST['btn-save']))
-{
- // variables for input data
- $Name = $_POST['Name'];
- $Nickname = $_POST['Nickname'];
- $Email = $_POST['Email'];
- $Phone_number = $_POST['Phone_number'];
- $Home_address = $_POST['Home_address'];
- // variables for input data
- 
- // sql query for inserting data into database
- 
-        $sql_query = "INSERT INTO users(Name,Nickname,Email,Phone_number,Home_address) VALUES('$Name,$Nickname,$Email,$Phone_number,$Home_address')";
- mysqli_query($sql_query);
-        
-        // sql query for inserting data into database
- 
-}
 ?>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<style>
-<?php include 'style.css'; ?>
-
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body>  
-<?php include 'links.php';?>
- <?php
+<body>
+<center>
+
+<div id="body">
+ <div id="content">
+    <table align="center">
+    <tr>
+    <th colspan="5"><a href="add_data.php">add data here.</a></th>
+    </tr>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>City Name</th>
+    <th colspan="2">Operations</th>
+    </tr>
+    <?php
  $sql_query="SELECT * FROM users";
- $result_set=mysql_query($sql_query);
- while($row=mysql_fetch_row($result_set))
+ $result_set=mysqli_query($con,$sql_query);
+ while($row=mysqli_fetch_row($result_set))
  {
   ?>
         <tr>
@@ -46,126 +37,10 @@ if(isset($_POST['btn-save']))
         <?php
  }
  ?>
+    </table>
+    </div>
+</div>
 
-
-<?php
-// define variables and set to empty values
-$nameErr = $nicknameErr = $emailErr = $genderErr = $phoneErr = $homeadErr = "";
-$name =$nickname= $email = $gender = $comment = $phone = $homead = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z-0-9]*$/",$name)) {
-      $nameErr = "Only letters,numbers and white space allowed"; 
-    }
-  }
-    if (empty($_POST["nickname"])) {
-    $nicknameErr = "Nickname is required";
-  } else {
-    $nickname = test_input($_POST["nickname"]);
-    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
-      $nicknameErr = "Only letters and white space allowed"; 
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format"; 
-    }
-  }
-    if (empty($_POST["phone"])) {
-    $phoneErr = "Phonenumber is required";
-  } else {
-    $phone = test_input($_POST["phone"]);
-    if (!preg_match("/^([0-9]*)$/",$phone)) {
-      $phoneErr = "Only numbers allowed"; 
-    }
-  }
-    
-  if (empty($_POST["homead"])) {
-    $homead = "";
-  } else {
-    $homead = test_input($_POST["homead"]);
-    }
-
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
-<br><br>
-
-
-<br><br>
-<center><h2>CONTACT ME AT deleonaleoralphcastro@gmail.com OR SEND ME A NOTE</h2>
-<p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name:<input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  Nickname:<input type="text" name="nickname" value="<?php echo $nickname;?>">
-  <span class="error">* <?php echo $nicknameErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  Phonenumber: <input type="text" name="phone" value="<?php echo $phone;?>">
-  <span class="error">* <?php echo $phoneErr;?></span>
-  <br><br>
-  Home Address: <input type="text" name="homead" value="<?php echo $homead;?>">
-  <span class="error"><?php echo $homeadErr;?></span>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <span class="error">* <?php echo $genderErr;?></span>
-  <br><br>
-  <input type="submit" name="submit" value="Submit"></center> 
-</form>
-<center><h2>Your Input:</h2>
-<?php
-
-echo $name;
-echo "<br>";
-echo $nickname;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $homead;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $phone;
-echo "<br>";
-echo $gender;
-
-?>
 </center>
-
 </body>
 </html>

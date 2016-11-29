@@ -46,13 +46,7 @@ li:hover{
 </style>
 
 </head>
-
-<ul>
-<li><a href="mypage.html">Home</a></li>
-<li><a href="more.html">More about me</a></li>
-<li><a href="Register.php">Contact me</a></li>
-</ul>
-
+<?php include 'links.php';?>
 
 <br>
 <h1 class="r" style="text-align:center;">About me<br><h2 style="font-family:verdana;"><center>Aleo</br></center></h2>

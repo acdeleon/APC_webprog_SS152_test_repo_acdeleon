@@ -50,11 +50,7 @@ p{
 </head>
 <body>
 
-<ul>
-<li class="c"><a href="mypage.html">Home</a></li>
-<li class="c"><a href="more.html">More about me</a></li>
-<li><a href="Register.php">Contact me</a></li>
-</ul>
+<?php include 'links.php';?>
 
 <h1 style="text-align:center"><br>About me</h1>
 

@@ -1,16 +1,18 @@
 <?php
 include_once 'dbconfig.php';
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
+<title>My page</title>
 <link rel="stylesheet" href="style2.css" type="text/css" />
+
 <style>
 <?php include 'style.css'; ?>
 </style>
 </head>
 <body>
+<?php include 'links.php';?>
 <center>
 
 <div id="body">
@@ -34,8 +36,8 @@ include_once 'dbconfig.php';
         <td><?php echo $row[1]; ?></td>
         <td><?php echo $row[2]; ?></td>
         <td><?php echo $row[3]; ?></td>
-  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
-        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
+  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="edit.png" align="EDIT" /></a></td>
+        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="delete.png" align="DELETE" /></a></td>
         </tr>
         <?php
  }

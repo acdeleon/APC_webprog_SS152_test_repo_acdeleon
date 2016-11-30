@@ -29,11 +29,6 @@
 <img class="1"  src="9.png" alt="9Gag" style="width:42px;height:42px;border:0">
 
 </p>
-
-
-
-
-
 </body>
 </html>
 

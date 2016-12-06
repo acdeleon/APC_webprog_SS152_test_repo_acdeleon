@@ -1,15 +1,19 @@
-h1{color:yellow;}
 h2{color: yellow;}
 body{
 	outline-style: dotted;outline-color: yellow;
 	font-family:"Courier New", Courier, monospace;
+	background-image: url("c.jpg");
 }
  
-.r{font-family: verdana}
-body {background-image: url("c.jpg");
-font-family:"Courier New", Courier, monospace;}
-#h{border-radius: 50%;}
-.1{border-radius: 20%;}
+.r{
+	font-family: verdana
+}
+#h{
+	border-radius: 50%;
+	}
+.1{
+	border-radius: 20%;
+	}
 
 
 ul {

@@ -11,9 +11,9 @@ if(isset($_POST['btn-save']))
  // variables for input data
 
  // sql query for inserting data into database
- $sql_query = "INSERT INTO users(Name,Nickname,Email,Phone_number,Home_address) VALUES('$Name','$Nickname','$Phone_number',$'Home_address')";
+ $sql_query = "INSERT INTO users(Name,Nickname,Email,Phone_number,Home_address) VALUES('$Name','$Nickname','$Email','$Phone_number','$Home_address')";
  // sql query for inserting data into database
- 
+
  // sql query execution function
  if(mysqli_query($con,$sql_query))
  {
@@ -28,7 +28,7 @@ if(isset($_POST['btn-save']))
  {
   ?>
   <script type="text/javascript">
-  alert('error occured while inserting your data');
+  alert('error occurred');
   </script>
   <?php
  }

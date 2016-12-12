@@ -8,10 +8,12 @@ if(isset($_POST['btn-save']))
  $Email = $_POST['Email'];
  $Phone_number = $_POST['Phone_number'];
  $Home_address = $_POST['Home_address'];
+ $Gender = $_POST['Gender'];
+ $Comments = $_POST['Comments'];
  // variables for input data
 
  // sql query for inserting data into database
- $sql_query = "INSERT INTO users(Name,Nickname,Email,Phone_number,Home_address) VALUES('$Name','$Nickname','$Email','$Phone_number','$Home_address')";
+ $sql_query = "INSERT INTO users(Name,Nickname,Email,Home_address,Gender,Phone_number,Comments) VALUES('$Name','$Nickname','$Email','$Home_address','$Gender','$Phone_number','%Comments')";
  // sql query for inserting data into database
 
  // sql query execution function
@@ -71,6 +73,12 @@ if(isset($_POST['btn-save']))
     </tr>
 	<tr>
     <td><input type="text" name="Home_address" placeholder="Home Address" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="Gender" placeholder="Gender" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="Comments" placeholder="Comments" required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>

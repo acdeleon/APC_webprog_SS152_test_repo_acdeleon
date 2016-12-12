@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2016 at 03:52 AM
+-- Generation Time: Dec 12, 2016 at 03:19 PM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.6
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbtuts`
+-- Database: `users`
 --
 
 -- --------------------------------------------------------
@@ -32,8 +32,18 @@ CREATE TABLE `users` (
   `Nickname` varchar(25) NOT NULL,
   `Email` varchar(25) NOT NULL,
   `Phone_number` int(25) NOT NULL,
-  `Home_address` varchar(25) NOT NULL
+  `Home_address` varchar(25) NOT NULL,
+  `Gender` varchar(25) NOT NULL,
+  `Comments` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `Name`, `Nickname`, `Email`, `Phone_number`, `Home_address`, `Gender`, `Comments`) VALUES
+(1, 'qwe', 'qwe', 'qwe', 123123, 'qwe', '', ''),
+(2, 'dsf', 'sdf', 'sdf', 0, 'sdfsdf', '', '');
 
 --
 -- Indexes for dumped tables
@@ -53,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

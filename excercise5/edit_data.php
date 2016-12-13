@@ -23,7 +23,7 @@ if(isset($_POST['btn-update']))
  // sql query for update data into database
  
  // sql query execution function
- if(mysql_query($sql_query))
+ if(mysqli_query($con,$sql_query))
  {
   ?>
   <script type="text/javascript">
@@ -51,30 +51,36 @@ if(isset($_POST['btn-cancel']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
+<?php include 'links.php'; ?>
 <center>
-
-<div id="header">
- <div id="content">
-    <label>CRUD Operations With PHP and MySql - By Cleartuts</label>
-    </div>
-</div>
 
 <div id="body">
  <div id="content">
     <form method="post">
     <table align="center">
     <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" value="<?php echo $fetched_row['first_name']; ?>" required /></td>
+    <td><input type="text" name="Name" placeholder="Name" value="<?php echo $fetched_row['Name']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
+    <td><input type="text" name="Nickname" placeholder="Nickname" value="<?php echo $fetched_row['Nickname']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
+    <td><input type="text" name="Email" placeholder="Email" value="<?php echo $fetched_row['Email']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="Phone_number" placeholder="Phone number" value="<?php echo $fetched_row['Phone_number']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="Home_address" placeholder="Home address" value="<?php echo $fetched_row['Home_address']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="Gender" placeholder="Gender" value="<?php echo $fetched_row['Gender']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="Comments" placeholder="Comments" value="<?php echo $fetched_row['Comments']; ?>" required /></td>
     </tr>
     <tr>
     <td>

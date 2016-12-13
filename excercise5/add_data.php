@@ -37,7 +37,7 @@ if(isset($_POST['btn-save']))
  // sql query execution function
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE>
 <html>
 <head>
 <style>
@@ -78,10 +78,10 @@ if(isset($_POST['btn-save']))
     <td><input type="text" name="Gender" placeholder="Gender" required /></td>
     </tr>
 	<tr>
-    <td><input type="text" name="Comments" placeholder="Comments" required /></td>
+    <td><textarea type='text' name="Comments" placeholder="Comments" rows="5" cols="40"></textarea></td>
     </tr>
     <tr>
-    <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
+    <td><button type="submit" name="btn-save" value="Submit"><strong>SAVE</strong></button></td>
     </tr>
     </table>
     </form>

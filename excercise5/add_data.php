@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
@@ -12,16 +11,18 @@ if(isset($_POST['btn-save']))
  $Gender = $_POST['Gender'];
  $Comments = $_POST['Comments'];
  // variables for input data
- 
+
  // sql query for inserting data into database
- 
  $sql_query = "INSERT INTO users(Name,Nickname,Email,Home_address,Gender,Phone_number,Comments) VALUES('$Name','$Nickname','$Email','$Home_address','$Gender','$Phone_number','$Comments')";
+
+
+ // sql query execution function
  if(mysqli_query($con,$sql_query))
  {
   ?>
   <script type="text/javascript">
-  alert('Data Are Updated Successfully');
-  window.location.href='Register.php';
+  alert('Data Are Inserted Successfully ');
+  window.location.href='index.php';
   </script>
   <?php
  }
@@ -29,24 +30,30 @@ if(isset($_POST['btn-save']))
  {
   ?>
   <script type="text/javascript">
-  alert('error occured while adding data');
+  alert('error occurred');
   </script>
   <?php
  }
+ // sql query execution function
 }
 ?>
+
+<!DOCTYPE HTML>  
 <html>
-<title>My Page</title>
-<body>
+<head>
 <style>
 <?php include 'style.css';?>
 </style>
+</head>
+<body>  
 <?php include 'links.php';?>
 
+ 
 <?php
 // define variables and set to empty values
 $nameErr = $nicknameErr = $emailErr = $genderErr = $phoneErr = $homeadErr = "";
 $Name = $Nickname = $Email = $Gender = $Phone_number = $Comments = $Home_address = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["Name"])) {
     $nameErr = "Name is required";
@@ -109,7 +116,7 @@ function test_input($data) {
   return $data;
 }
 ?>
-
+<br><br>
 <center>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
@@ -134,7 +141,7 @@ function test_input($data) {
   <input type="radio" name="Gender" <?php if (isset($Gender) && $Gender=="female") echo "checked";?> value="female">Female
   <input type="radio" name="Gender" <?php if (isset($Gender) && $Gender=="male") echo "checked";?> value="male">Male
   <span class="error">* <?php echo $genderErr;?></span>
-  <br><br>
+
   <input type="submit" name="btn-save" value="Submit"></center> 
 </form>
 </center>

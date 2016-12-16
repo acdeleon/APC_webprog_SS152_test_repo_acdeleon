@@ -1,55 +1,4 @@
 <?php
-include_once 'dbconfig.php';
-if(isset($_POST['btn-save']))
-{
- // variables for input data
- $Name = $_POST['Name'];
- $Nickname = $_POST['Nickname'];
- $Email = $_POST['Email'];
- $Phone_number = $_POST['Phone_number'];
- $Home_address = $_POST['Home_address'];
- $Gender = $_POST['Gender'];
- $Comments = $_POST['Comments'];
- // variables for input data
-
- // sql query for inserting data into database
- $sql_query = "INSERT INTO users(Name,Nickname,Email,Home_address,Gender,Phone_number,Comments) VALUES('$Name','$Nickname','$Email','$Home_address','$Gender','$Phone_number','$Comments')";
-
-
- // sql query execution function
- if(mysqli_query($con,$sql_query))
- {
-  ?>
-  <script type="text/javascript">
-  alert('Data Are Inserted Successfully ');
-  window.location.href='index.php';
-  </script>
-  <?php
- }
- else
- {
-  ?>
-  <script type="text/javascript">
-  alert('error occurred');
-  </script>
-  <?php
- }
- // sql query execution function
-}
-?>
-
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-<?php include 'style.css';?>
-</style>
-</head>
-<body>  
-<?php include 'links.php';?>
-
- 
-<?php
 // define variables and set to empty values
 $nameErr = $nicknameErr = $emailErr = $genderErr = $phoneErr = $homeadErr = "";
 $Name = $Nickname = $Email = $Gender = $Phone_number = $Comments = $Home_address = "";
@@ -57,6 +6,7 @@ $Name = $Nickname = $Email = $Gender = $Phone_number = $Comments = $Home_address
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["Name"])) {
     $nameErr = "Name is required";
+	print "Hello world!"; 
   } else {
     $Name = test_input($_POST["Name"]);
     if (!preg_match("/^[a-zA-Z-0-9]*$/",$Nickname)) {
@@ -66,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Nickname"])) {
     $nicknameErr = "Nickname is required";
   } else {
-    $Nickname = test_input($_POST["nickname"]);
+    $Nickname = test_input($_POST["Nickname"]);
     if (!preg_match("/^[a-zA-Z ]*$/",$Nickname)) {
       $nicknameErr = "Only letters and white space allowed"; 
     }
@@ -76,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailErr = "Email is required";
   } else {
     $Email = test_input($_POST["Email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format"; 
     }
   }
@@ -109,6 +59,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
+else{
+	include_once 'dbconfig.php';
+	echo'Hello inside else';
+if(isset($_POST['btn-save']))
+{
+ // variables for input data
+ $Name = $_POST['Name'];
+ $Nickname = $_POST['Nickname'];
+ $Email = $_POST['Email'];
+ $Phone_number = $_POST['Phone_number'];
+ $Home_address = $_POST['Home_address'];
+ $Gender = $_POST['Gender'];
+ $Comments = $_POST['Comments'];
+
+ // sql query for inserting data into database
+ $sql_query = "INSERT INTO users(Name,Nickname,Email,Home_address,Gender,Phone_number,Comments) VALUES('$Name','$Nickname','$Email','$Home_address','$Gender','$Phone_number','$Comments')";
+echo $sql_query;
+
+ // sql query execution function
+ if(mysqli_query($con,$sql_query))
+ {
+  ?>
+  <script type="text/javascript">
+  alert('Data Are Inserted Successfully ');
+
+  </script>
+  <?php
+ }
+ else
+ {
+  ?>
+  <script type="text/javascript">
+  alert('error occurred');
+  </script>
+  <?php
+ }
+ // sql query execution function
+}
+
+	
+	
+}
+
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -116,6 +109,23 @@ function test_input($data) {
   return $data;
 }
 ?>
+
+
+
+
+
+<!DOCTYPE HTML>  
+<html>
+<head>
+<style>
+<?php include 'style.css';?>
+</style>
+</head>
+<body>  
+<?php include 'links.php';?>
+
+ 
+
 <br><br>
 <center>
 <p><span class="error">* required field.</span></p>

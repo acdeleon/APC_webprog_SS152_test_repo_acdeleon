@@ -21,7 +21,7 @@
    ?>
    <script type="text/javascript">
    alert('Data Are Inserted Successfully ');
-   //window.location.href='Register.php';
+   window.location.href="<?php echo site_url('Register');?>";
    </script>
    <?php
   }
@@ -41,7 +41,7 @@
  <html>
  <head>
  <style>
- <?php include 'style.css';?>
+ <?php include 'assets/css/style.css';?>
  </style>
  </head>
  <body>  

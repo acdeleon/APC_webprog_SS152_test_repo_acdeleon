@@ -14,11 +14,12 @@ if(isset($_GET['delete_id']))
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<title>Webprog</title>
 <style>
-<?php include 'assets/css/style2.css'; ?>
+<?php include 'assets/css/style.css'; ?>
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
 <script type="text/javascript">
 function edt_id(id)
 {
@@ -43,7 +44,7 @@ function delete_id(id)
  <div id="content">
     <table align="center">
     <tr>
-    <th colspan="9"><a href="add_data.php">add data here.</a></th>
+    <th colspan="9"><a href="<?php echo site_url('add_data');?>">add data here.</a></th>
     </tr>
     <th>Name</th>
     <th>Nickname</th>
@@ -69,8 +70,8 @@ function delete_id(id)
 		<td><?php echo $row[5]; ?></td>
 		<td><?php echo $row[6]; ?></td>
 		<td><?php echo $row[7]; ?></td>
-  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="edit.png" align="EDIT" /></a></td>
-        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="delete.png" align="DELETE" /></a></td>
+  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="assets/img/edit.png" align="EDIT" /></a></td>
+        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="assets/img/delete.png" align="DELETE" /></a></td>
         </tr>
         <?php
  }

@@ -15,10 +15,10 @@ if(isset($_GET['delete_id']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <style>
-<?php include 'style2.css'; ?>
+<?php include 'assets/css/style2.css'; ?>
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 <script type="text/javascript">
 function edt_id(id)
 {

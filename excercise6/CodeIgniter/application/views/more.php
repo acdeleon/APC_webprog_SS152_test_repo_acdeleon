@@ -3,7 +3,7 @@
 <head>
 <title>Webprog</title>
 <style>
-<?php include 'style.css'; ?>
+<?php include 'assets/css/style.css'; ?>
 </style>
 
 </head>

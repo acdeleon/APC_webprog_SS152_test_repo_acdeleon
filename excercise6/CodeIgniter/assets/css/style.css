@@ -2,7 +2,7 @@ h2{color: yellow;}
 body{
 	outline-style: dotted;outline-color: yellow;
 	font-family:"Courier New", Courier, monospace;
-	background-image: url("c.jpg");
+	background-image: url("assets/img/c.jpg");
 }
  
 .r{

@@ -7,10 +7,20 @@
             body{
                 padding: 15px;
                 background-image: url("assets/img/c.jpg");
+<<<<<<< HEAD
             }
         </style>
     </head>
     <body>
+=======
+
+            }
+
+        </style>
+    </head>
+    <body>
+
+>>>>>>> 9afc5ee2d7f23a46327315593a84546dde784c55
         <h2 style="margin-top:0px">Users <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">

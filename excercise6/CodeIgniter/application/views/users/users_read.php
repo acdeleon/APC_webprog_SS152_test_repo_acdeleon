@@ -6,10 +6,6 @@
         <style>
             body{
                 padding: 15px;
-<<<<<<< HEAD
-=======
-                font-family:"Courier New", Courier, monospace;
->>>>>>> 9afc5ee2d7f23a46327315593a84546dde784c55
                 background-image: url("assets/img/c.jpg");
             }
         </style>

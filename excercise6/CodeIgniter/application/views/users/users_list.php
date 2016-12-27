@@ -1,12 +1,7 @@
 <!doctype html>
 <html>
     <head>
-<<<<<<< HEAD
         <title>My Page</title>
-=======
-
-        <title>My page</title>
->>>>>>> 9afc5ee2d7f23a46327315593a84546dde784c55
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>"/>
         <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>"/>
@@ -29,7 +24,6 @@
             }
             body{
                 padding: 15px;
-<<<<<<< HEAD
                 background-image: url("assets/img/c.jpg");
             }
             li {
@@ -64,72 +58,14 @@
      width: 100%;
  
  }
-=======
-                outline-style: dotted;outline-color: yellow;
-                font-family:"Courier New", Courier, monospace;
-                background-image: url("assets/img/c.jpg");
-            }
-            r{
-    font-family: verdana
-}
-#h{
-    border-radius: 50%;
-    }
-.1{
-    border-radius: 20%;
-    }
-
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(255,255,255,0.5);
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-}
-
-li {
-    float: left;
-    
-}
-
-li a  {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-right: 1px solid #111;
-}
-
-li a:hover{
- background-color: yellow;}
- 
- #content2{
-     margin-top: 100px;
-     color:blue;
- }
-
->>>>>>> 9afc5ee2d7f23a46327315593a84546dde784c55
         </style>
     </head>
     <body>
     <ul>
-<<<<<<< HEAD
     <li><a href="<?php echo site_url('Home');?>">Home</a></li>
  <li><a href="<?php echo site_url('More');?>">More about me</a></li>
  <li><a href="<?php echo site_url('users');?>">Contact me</a></li></ul>
 
-=======
-<li><a href="<?php echo site_url('Home');?>">Home</a></li>
-<li><a href="<?php echo site_url('More');?>">More about me</a></li>
-<li><a href="<?php echo site_url('users');?>">Contact me</a></li>
-</ul>
->>>>>>> 9afc5ee2d7f23a46327315593a84546dde784c55
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 <h2 style="margin-center:0px">Users List</h2>
